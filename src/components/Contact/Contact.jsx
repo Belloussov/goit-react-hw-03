@@ -1,18 +1,21 @@
 import { BsPersonCircle } from "react-icons/bs";
 import { ImPhone } from "react-icons/im";
+import css from "./Contact.module.css";
 
-export default function Contact({ contact: { name, number,id }, onDelete }) {
+export default function Contact({ contact: { name, number, id }, onDelete }) {
   return (
-    <div>
-      <div>
-        <p>
+    <div className={css.container}>
+      <div className={css.cover}>
+        <p className={css.contactField}>
           <BsPersonCircle /> {name}
         </p>
-        <p>
+        <p className={css.contactField}>
           <ImPhone /> {number}
         </p>
       </div>
-      <button onClick={()=> onDelete(id)}>Delete</button>
+      <button className={css.button} onClick={() => onDelete(id)}>
+        Delete
+      </button>
     </div>
   );
 }

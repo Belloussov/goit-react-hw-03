@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.cover {
+  width: 200px;
+}
+
+.contactField {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.button {
+  font-family: "Sedan SC", serif;
+  display: block;
+  border: 1px solid transparent;
+  border-radius: 8px;
+}

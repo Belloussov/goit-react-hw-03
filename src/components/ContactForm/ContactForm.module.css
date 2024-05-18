@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.input {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.button {
+  font-family: "Sedan SC", serif;
+  display: block;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.error {
+  color: orangered;
+}

@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import initContacts from "../../initContacts.json";
 import ContactList from "../ContactList/ContactList";
 import SearchBox from "../SearchBox/SearchBox";
-// import ContactForm from "../ContactForm/ContactForm";
+import ContactForm from "../ContactForm/ContactForm";
+import css from "./App.module.css";
 
 const getContact = () => {
   const savedData = localStorage.getItem("contacts");
@@ -16,6 +17,10 @@ export default function App() {
   const [contacts, setContacts] = useState(getContact);
 
   const [filter, setFilter] = useState("");
+
+  useEffect(() => {
+    localStorage.setItem("contacts", JSON.stringify(contacts));
+  }, [contacts]);
 
   const addContact = (newContact) => {
     setContacts((contacts) => {
@@ -34,9 +39,9 @@ export default function App() {
   );
 
   return (
-    <div>
-      <h1>Phonebook</h1>
-      {/* <ContactForm onAdd={addContact} /> */}
+    <div className={css.container}>
+      <h1 className={css.title}>Phonebook</h1>
+      <ContactForm onAdd={addContact} />
       <SearchBox value={filter} onFilter={setFilter} />
       <ContactList contacts={visibleContacts} onDelete={deleteContact} />
     </div>
